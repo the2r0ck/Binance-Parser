@@ -1,0 +1,2 @@
+* * * * * cd /app && /opt/venv/bin/python3 -m parser.klines > klines.txt
+* * * * * cd /app && /opt/venv/bin/python3 -m parser.depth > depth.txt

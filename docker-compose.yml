@@ -1,0 +1,8 @@
+services:
+  parser:
+    build:
+      context: .
+      dockerfile: ./parser/Dockerfile
+    network_mode: host
+    ports:
+      - 5432:5432

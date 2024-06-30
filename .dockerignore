@@ -1,0 +1,6 @@
+alembic.ini
+.sert
+.vscode
+data
+database/migrations
+binance_api_parsing.code-workspace
