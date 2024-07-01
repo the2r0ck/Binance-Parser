@@ -9,7 +9,6 @@ RUN apt install -y python3
 # RUN apt install -y python3-venv
 # RUN python3 -m venv /opt/venv
 ENV PORT 8080
-ENV PATH="/opt/venv/bin:$PATH"
 
 RUN apt install -y python3-uvicorn python3-fastapi
 
