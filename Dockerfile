@@ -5,8 +5,8 @@ COPY . /app
 
 RUN apt update
 
-ENV PORT 80
-EXPOSE 80
+ENV PORT 8080
+EXPOSE 8080
 
 RUN apt install -y python3
 RUN apt install -y python3-pip
@@ -17,4 +17,4 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install uvicorn fastapi
 
 # CMD cron && tail -f /var/log/cron.log
-CMD ["uvicorn", "adaptable_needs:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "adaptable_needs:app", "--host", "0.0.0.0", "--port", "8080"]
