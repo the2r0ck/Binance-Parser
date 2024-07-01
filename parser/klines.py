@@ -10,7 +10,7 @@ from sqlalchemy import text
 from database.Base import async_connection
 from database.models.symbol import Symbol, Kline
 
-from parser.config import Config
+from config import BinanceConfig as Config
 
 
 async def get_symbols() -> list[Symbol]:

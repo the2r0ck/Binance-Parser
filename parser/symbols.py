@@ -7,7 +7,7 @@ from sqlalchemy.future import select
 from database.Base import async_connection
 from database.models.symbol import Symbol
 
-from parser.config import Config
+from config import BinanceConfig as Config
 
 from utils import send_telegram_info_async
 

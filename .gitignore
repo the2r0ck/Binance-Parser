@@ -4,4 +4,4 @@ alembic.ini
 data
 database/migrations
 binance_api_parsing.code-workspace
-.gitignore
+.dockerignore

@@ -11,7 +11,7 @@ from sqlalchemy import text
 from database.Base import async_connection
 from database.models.symbol import Symbol, OrderBook
 
-from parser.config import Config
+from config import BinanceConfig as Config
 
 from utils import send_telegram_alert
 
