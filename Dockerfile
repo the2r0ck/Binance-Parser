@@ -24,6 +24,4 @@ RUN touch /var/log/cron.log
 
 RUN crontab /etc/cron.d/cron
 
-RUN cron
-
 CMD ["bash", "run_all.sh"]
