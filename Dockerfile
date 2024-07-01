@@ -24,4 +24,6 @@ RUN touch /var/log/cron.log
 
 RUN crontab /etc/cron.d/cron
 
-CMD ["cron", "&&", "uvicorn", "adaptable_needs:app", "--host", "0.0.0.0", "--port", "8080"]
+RUN cron
+
+CMD ["bash", "run_all.sh"]
