@@ -7,14 +7,21 @@ RUN apt update
 
 ENV PORT 8080
 EXPOSE 8080
+EXPOSE 5432
 
+RUN apt install -y cron
 RUN apt install -y python3
 RUN apt install -y python3-pip
 RUN apt install -y python3-venv
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-RUN pip install uvicorn fastapi
+RUN pip install -r requirements.txt
 
-# CMD cron && tail -f /var/log/cron.log
-CMD ["uvicorn", "adaptable_needs:app", "--host", "0.0.0.0", "--port", "8080"]
+COPY cron /etc/cron.d/cron
+RUN chmod 0644 /etc/cron.d/cron
+RUN touch /var/log/cron.log
+
+RUN crontab /etc/cron.d/cron
+
+CMD ["cron", "&&", "uvicorn", "adaptable_needs:app", "--host", "0.0.0.0", "--port", "8080"]
