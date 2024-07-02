@@ -15,5 +15,5 @@ class TelegramConfig:
     alert_bot_token = "7241377415:AAGuQCcRc7JwBcoYt6f5QQwtGNJUx0ukkho"
     info_bot_token = "7279065863:AAF_U-fehbQfFlzzfBX666l_pJIol1LxxFM"
     support_user_ids = [
-        "1037555181"
+        1037555181
     ]
