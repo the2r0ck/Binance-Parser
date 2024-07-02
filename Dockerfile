@@ -16,7 +16,8 @@ RUN apt install -y python3-venv
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
+RUN pip install requests fastapi uvicorn
 
 COPY cron /etc/cron.d/cron
 RUN chmod 0644 /etc/cron.d/cron
