@@ -21,4 +21,4 @@ RUN crontab /etc/cron.d/cron
 
 EXPOSE 5432
 
-CMD cron
+CMD ["cron"]
