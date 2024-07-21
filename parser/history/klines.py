@@ -66,10 +66,14 @@ async def main():
         
         # test start_timestamp
         klines = await BinanceAPI.get_klines(symbol=symbol.symbol, interval="1m", startTime=start_timestamp, limit=100)
-        if start_timestamp < klines[0][0]:
-            start_timestamp = klines[0][0]
-            print(f"start time is confused and set to {datetime.fromtimestamp(start_timestamp/1000)}")
-
+        try:
+            if start_timestamp < klines[0][0]:
+                start_timestamp = klines[0][0]
+                print(f"start time is confused and set to {datetime.fromtimestamp(start_timestamp/1000)}")
+        except Exception as e:
+            print(f"The symbol {symbol.symbol} is broken: {e}\n")
+            continue
+        
         print(f"Downloading {symbol.symbol} data starts from {datetime.fromtimestamp(start_timestamp / 1000)}")
         t0 = time()    
         while start_timestamp < datetime.now().timestamp() * 1000:
